@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TRIANGLE AGENCY™ — Making Reality Work</title>
+<style>
+  :root{
+    --red:#ed1c24; --black:#101114; --paper:#f1f1ed; --gray:#c8c9c8;
+    --blue:#9ce8ff; --acid:#d8ff45;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:#d7d7d3;color:var(--black);
+    font-family:Arial,Helvetica,sans-serif;
+    background-image:radial-gradient(#9a9a96 .7px,transparent .7px);
+    background-size:5px 5px;
+  }
+  a{color:inherit}
+  .topline{
+    background:var(--red);color:#fff;font:700 11px/1.3 Arial,sans-serif;
+    letter-spacing:.18em;text-align:center;padding:7px 12px;text-transform:uppercase;
+  }
+  header{
+    background:linear-gradient(115deg,#090a0c,#292b30 60%,#111214);
+    color:#fff;border-bottom:5px solid var(--red);padding:22px clamp(18px,5vw,70px) 18px;
+    position:relative;overflow:hidden;
+  }
+  header:after{
+    content:"";position:absolute;width:260px;height:260px;border:30px solid rgba(255,255,255,.07);
+    transform:rotate(45deg);right:8%;top:-190px;
+  }
+  .brand{display:flex;align-items:center;gap:16px;position:relative;z-index:1}
+  .mark{width:54px;height:48px;position:relative;flex:none}
+  .mark:before{content:"";position:absolute;inset:0;background:#fff;clip-path:polygon(50% 0,100% 100%,0 100%)}
+  .mark:after{content:"";position:absolute;left:16px;right:16px;bottom:0;height:24px;background:var(--red);clip-path:polygon(50% 0,100% 100%,0 100%)}
+  .brand-name{font-weight:900;letter-spacing:.19em;font-size:clamp(19px,3vw,30px);line-height:.95}
+  .brand-name small{display:block;font-size:9px;letter-spacing:.42em;color:#c7c7c7;margin-top:8px}
+  .slogan{margin-left:auto;text-align:right;font-style:italic;color:#d7d7d7;font-size:13px}
+  nav{
+    display:flex;flex-wrap:wrap;gap:7px;padding:10px clamp(14px,5vw,70px);
+    background:#25262a;color:white;border-bottom:1px solid #555;
+  }
+  nav a{font-size:10px;font-weight:bold;letter-spacing:.12em;text-decoration:none;padding:7px 10px;border:1px solid #777}
+  nav a:hover{background:var(--red);border-color:var(--red)}
+  .ticker{overflow:hidden;white-space:nowrap;background:var(--acid);border-bottom:2px solid #111;padding:8px 0;font-weight:900;font-size:11px;letter-spacing:.12em}
+  .ticker span{display:inline-block;animation:marquee 24s linear infinite}
+  @keyframes marquee{from{transform:translateX(100vw)}to{transform:translateX(-100%)}}
+  main{max-width:1120px;margin:26px auto;padding:0 18px}
+  .hero{
+    background:var(--paper);border:2px solid #111;box-shadow:8px 8px 0 #111;
+    display:grid;grid-template-columns:1.3fr .7fr;gap:20px;padding:clamp(22px,4vw,46px);position:relative;overflow:hidden;
+  }
+  .eyebrow{font:700 10px Arial;letter-spacing:.2em;color:var(--red);text-transform:uppercase}
+  h1{font-size:clamp(42px,8vw,88px);line-height:.82;letter-spacing:-.075em;margin:18px 0 20px;text-transform:uppercase}
+  h1 em{font-style:normal;color:var(--red);display:block}
+  .hero p{max-width:590px;font-size:16px;line-height:1.55}
+  .stamp{
+    align-self:center;justify-self:center;width:min(100%,250px);aspect-ratio:1;border:7px double var(--red);
+    border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    color:var(--red);font-weight:900;text-align:center;transform:rotate(11deg);padding:20px;
+  }
+  .stamp strong{font-size:29px;line-height:.9}.stamp small{font-size:10px;letter-spacing:.15em;margin-top:12px}
+  .notice{margin-top:22px;background:#fff;border:1px solid #111;padding:13px 16px;font-size:12px;display:flex;gap:12px;align-items:center}
+  .blink{width:10px;height:10px;background:var(--red);border-radius:50%;animation:blink 1s steps(2,start) infinite;flex:none}
+  @keyframes blink{to{visibility:hidden}}
+  .section-title{display:flex;align-items:center;gap:12px;margin:38px 0 14px;text-transform:uppercase}
+  .section-title h2{font-size:21px;letter-spacing:-.04em;margin:0}
+  .section-title:after{content:"";height:2px;background:#111;flex:1}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+  .card{background:var(--paper);border:1px solid #111;padding:19px;min-height:180px;box-shadow:4px 4px 0 #777}
+  .card .num{font:900 11px monospace;color:var(--red)}
+  .card h3{font-size:18px;text-transform:uppercase;margin:13px 0 8px}
+  .card p{font-size:13px;line-height:1.5;margin:0}
+  .benefits{display:grid;grid-template-columns:1fr 1fr;gap:0;border:2px solid #111;background:#111}
+  .benefits div{background:#e8e8e3;padding:20px;border:1px solid #111}
+  .benefits b{display:block;text-transform:uppercase;font-size:13px;margin-bottom:7px}
+  .benefits p{font-size:13px;line-height:1.5;margin:0}
+  .faq{background:#111;color:#fff;padding:23px;border:1px solid #111}
+  details{border-bottom:1px solid #666;padding:12px 0}
+  summary{cursor:pointer;font-weight:bold;font-size:14px}
+  details p{color:#ccc;font-size:13px;line-height:1.5;max-width:780px}
+  .cta{
+    margin:30px 0;background:var(--red);color:#fff;padding:28px clamp(20px,4vw,40px);
+    border:2px solid #111;box-shadow:7px 7px 0 #111;display:flex;align-items:center;justify-content:space-between;gap:20px
+  }
+  .cta h2{font-size:clamp(24px,4vw,42px);line-height:.95;margin:0;text-transform:uppercase}
+  .cta p{font-size:12px;max-width:330px;line-height:1.5}
+  .button{display:inline-block;background:#fff;color:#111;text-decoration:none;padding:13px 17px;font-size:11px;font-weight:900;letter-spacing:.12em;border:2px solid #111;white-space:nowrap}
+  .button:hover{background:var(--acid)}
+  footer{background:#101114;color:#aaa;padding:25px clamp(18px,5vw,70px);font-size:10px;letter-spacing:.08em;line-height:1.7}
+  footer strong{color:#fff}
+  .fineprint{border-top:1px solid #555;margin-top:15px;padding-top:12px;color:#777}
+  @media(max-width:760px){
+    .hero{grid-template-columns:1fr}.stamp{width:165px;margin:8px auto 0}.grid{grid-template-columns:1fr}
+    .benefits{grid-template-columns:1fr}.cta{align-items:flex-start;flex-direction:column}.slogan{display:none}
+  }
+</style>
+</head>
+<body>
+<div class="topline">AVISO CORPORATIVO // A REALIDADE ESTÁ OPERACIONAL // POR FAVOR, PERMANEÇA CALMO</div>
+<header>
+  <div class="brand">
+    <div class="mark" aria-hidden="true"></div>
+    <div class="brand-name">TRIANGLE<br>AGENCY<small>REALITY MANAGEMENT DIVISION</small></div>
+    <div class="slogan">Making Reality Work.™</div>
+  </div>
+</header>
+<nav aria-label="Navegação principal">
+  <a href="#missao">NOSSA MISSÃO</a><a href="#cultura">CULTURA</a><a href="#beneficios">BENEFÍCIOS</a><a href="#duvidas">FAQ</a>
+</nav>
+<div class="ticker"><span>★ SEU POTENCIAL É ILIMITADO ★ A REALIDADE É UM AMBIENTE DE TRABALHO ★ ANOMALIAS SÃO OPORTUNIDADES ★ SORRIA: VOCÊ ESTÁ SENDO AVALIADO ★ </span></div>
+
+<main>
+  <section class="hero" id="missao">
+    <div>
+      <div class="eyebrow">Bem-vindo à família corporativa // Registro TA-0001</div>
+      <h1>O impossível<em>é nosso expediente.</em></h1>
+      <p>Parabéns por fazer parte da Triangle Agency! Somos uma organização comprometida com a manutenção da realidade, a excelência operacional e a transformação de ocorrências inexplicáveis em resultados mensuráveis.</p>
+      <p>Todos os dias, nossos colaboradores fazem a diferença. Alguns fazem a diferença entre esta realidade e uma realidade alternativa. Valorizamos ambos os esforços.</p>
+    </div>
+    <div class="stamp"><strong>APROVADO<br>PELO RH</strong><small>SUA EXISTÊNCIA<br>FOI VALIDADA*</small></div>
+  </section>
+
+  <div class="notice"><span class="blink"></span><strong>COMUNICADO:</strong> Caso esteja lendo esta mensagem em uma realidade não autorizada, ignore esta realidade e contate seu supervisor.</div>
+
+  <div class="section-title"><h2>O que esperamos de você?</h2></div>
+  <section class="grid" id="cultura">
+    <article class="card"><div class="num">01 // EXCELÊNCIA</div><h3>Entregue resultados</h3><p>Mesmo quando as leis da física não colaborarem. Especialmente quando as leis da física não colaborarem. Não aceitamos a física como justificativa para atrasos.</p></article>
+    <article class="card"><div class="num">02 // INICIATIVA</div><h3>Pense fora da realidade</h3><p>Antecipe problemas antes que desenvolvam consciência própria, criem um sindicato ou solicitem benefícios corporativos.</p></article>
+    <article class="card"><div class="num">03 // SINERGIA</div><h3>Seja parte da solução</h3><p>Nenhum funcionário é mais importante que a organização. Nem mesmo aqueles que existem em múltiplas versões simultâneas.</p></article>
+  </section>
+
+  <div class="section-title"><h2>Uma carreira sem limites*</h2></div>
+  <section class="benefits" id="beneficios">
+    <div><b>★ Oportunidades de crescimento</b><p>Planos de carreira verticais, horizontais e em dimensões que ainda não receberam nomenclatura oficial.</p></div>
+    <div><b>★ Continuidade contratual</b><p>Seu vínculo com a Agência não termina com a morte. Consulte o RH para conhecer as condições de renovação pós-vida.</p></div>
+    <div><b>★ Ambiente inclusivo</b><p>Valorizamos colaboradores vivos, falecidos, desaparecidos, duplicados e temporariamente inexistentes.</p></div>
+    <div><b>★ Saúde e bem-estar</b><p>Nosso programa de apoio está disponível para qualquer funcionário que consiga preencher o formulário sem assistência externa.</p></div>
+  </section>
+
+  <div class="section-title"><h2>Dúvidas? Temos respostas aprovadas.</h2></div>
+  <section class="faq" id="duvidas">
+    <details><summary>E se eu encontrar algo que não deveria existir?</summary><p>Parabéns! Você identificou uma oportunidade de melhoria operacional. Não estabeleça contato visual prolongado com a oportunidade.</p></details>
+    <details><summary>E se a realidade deixar de funcionar?</summary><p>Mantenha a calma. A Agência possui protocolos específicos para situações dessa natureza. Improvisar uma realidade alternativa sem autorização prévia pode resultar em medidas disciplinares.</p></details>
+    <details><summary>E se eu não me sentir seguro?</summary><p>Sua segurança é nossa prioridade. Preencha o Formulário de Avaliação de Segurança em três vias antes de tomar qualquer atitude. Em caso de emergência, aguarde a aprovação do formulário.</p></details>
+    <details><summary>Posso questionar uma decisão da Agência?</summary><p>É claro! Todas as opiniões são ouvidas, todas as sugestões são consideradas e todas as decisões já foram tomadas.</p></details>
+    <details><summary>Quem é meu superior imediato?</summary><p>Seu superior imediato será informado assim que a cadeia hierárquica for estabilizada. Até lá, obedeça a todas as instruções compatíveis entre si.</p></details>
+  </section>
+
+  <section class="cta">
+    <div><h2>Você é a diferença.<br>Seja substituível com orgulho.</h2><p>A Triangle Agency acredita em você. E mantém um arquivo atualizado sobre essa crença.</p></div>
+    <a class="button" href="mailto:hr@triangle-agency.invalid">CONTATE O RH ↗</a>
+  </section>
+</main>
+
+<footer>
+  <strong>TRIANGLE AGENCY™</strong> — MAKING REALITY WORK.<br>
+  Departamento de Recursos Humanos // Divisão de Gestão da Realidade<br>
+  Este site é propriedade da Triangle Agency. A reprodução da realidade sem autorização é estritamente proibida.
+  <div class="fineprint">*A existência do colaborador está sujeita a auditoria, revisão administrativa e disponibilidade ontológica. Benefícios podem variar conforme a linha temporal, o estado de consciência e a política vigente. A Triangle Agency não se responsabiliza por paradoxos, duplicações, apagamentos ou efeitos colaterais decorrentes do uso inadequado da realidade.<br>© TRIANGLE AGENCY. TODOS OS DIREITOS RESERVADOS. ESTA PÁGINA FOI OTIMIZADA PARA FUNCIONÁRIOS AUTORIZADOS.</div>
+</footer>
+</body>
+</html>
